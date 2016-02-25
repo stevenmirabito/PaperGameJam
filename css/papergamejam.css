@@ -230,6 +230,10 @@ a.btn {
     width: 100%;
 }
 
+.btn.submission-return {
+    margin-top: 20px;
+}
+
 /*
 * Panels
 */
