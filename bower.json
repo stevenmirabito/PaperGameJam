@@ -1,0 +1,26 @@
+{
+  "name": "PaperGameJam",
+  "homepage": "http://papergamejam.com/",
+  "authors": [
+    "Steven Mirabito <steven@stevenmirabito.com>"
+  ],
+  "description": "Public website for the CSH Paper Game Jam",
+  "main": "",
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "csh",
+    "game",
+    "jam"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
