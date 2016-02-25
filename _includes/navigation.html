@@ -1,0 +1,38 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="{{ site.baseurl }}/images/csh_logo_white.svg" alt="CSH" class="logo"> Paper Game Jam</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+                {% assign sorted_pages = site.pages | where: "group", "navigation" | where: "parent", "top" | sort: "order" %}
+                {% for node in sorted_pages %}
+                    {% if page.url == node.url %}
+                        {% assign active_class = " class=\"active\"" %}
+                    {% endif %}
+
+                    {% if node.has_children %}
+                        <li class="dropdown">
+                            <a href="{{ node.url }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% if node.icon %}<span class="glyphicon glyphicon-{{ node.icon }}"></span>&nbsp; {% endif %}{{ node.title }} <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                {% assign child_pages = site.pages | where: "group", "navigation" | where: "parent", node.title | sort: "order" %}
+                                {% for child_node in child_pages %}
+                                    <li><a href="{{ child_node.url }}">{% if child_node.icon %}<span class="glyphicon glyphicon-{{ child_node.icon }}"></span>&nbsp; {% endif %}{{ child_node.title }}</a></li>
+                                {% endfor %}
+                                {% assign child_pages = null %}
+                            </ul>
+                        </li>
+                    {% else %}
+                        <li{{ active_class }}><a href="{{ node.url }}">{% if node.icon %}<span class="glyphicon glyphicon-{{ node.icon }}"></span>&nbsp; {% endif %}{{ node.title }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
