@@ -146,20 +146,20 @@ a.btn {
     margin-top: 20px;
 }
 
-.insights-date {
+.jumbotron-text {
     font-size: 1.5em;
     text-align: center;
     color: #FFF;
     text-shadow: 0 0 25px rgba(0, 0, 0, 1);
 }
 
-.date-title {
+.jumbotron-label {
     font-size: 0.8em;
     font-weight: bold;
     padding-top: 10px;
 }
 
-.date-title:first-of-type {
+.jumbotron-label:first-of-type {
     padding-top: 0;
 }
 
@@ -173,16 +173,16 @@ a.btn {
         height: 300px;
     }
 
-    .insights-date {
+    .jumbotron-text {
         font-size: 2em;
     }
 
-    .date-title {
+    .jumbotron-label {
         padding-top: 30px;
         font-size: 1em;
     }
 
-    .date-title:first-of-type {
+    .jumbotron-label:first-of-type {
         padding-top: 10px;
     }
 }
@@ -192,7 +192,7 @@ a.btn {
         display: inline;
     }
 
-    .date-title {
+    .jumbotron-label {
         padding-top: 30px !important;
     }
 }
