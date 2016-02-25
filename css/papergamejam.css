@@ -131,6 +131,7 @@ a.btn {
  */
 
 .jumbotron-banner {
+    text-align: center;
     background-size: cover;
     background: url('../images/banner_bg.png') no-repeat center;
     width: 100%;
@@ -139,22 +140,30 @@ a.btn {
     margin-bottom: 20px;
 }
 
+.jumbotron-logo {
+    display: none;
+    height: 260px;
+    margin-top: 20px;
+}
+
 .insights-date {
-    font-family: "Oxygen", sans-serif;
-    font-size: 2em;
+    font-size: 1.5em;
     text-align: center;
     color: #FFF;
-    text-shadow: 0px 0px 25px rgba(0, 0, 0, 1);
+    text-shadow: 0 0 25px rgba(0, 0, 0, 1);
 }
 
 .date-title {
-    font-size: 0.9em;
+    font-size: 0.8em;
     font-weight: bold;
-    padding-top: 20px;
+    padding-top: 10px;
+}
+
+.date-title:first-of-type {
+    padding-top: 0;
 }
 
 @media (min-width: 768px) {
-
     .information-update-container {
         padding-left: 10px;
         padding-right: 10px;
@@ -165,25 +174,32 @@ a.btn {
     }
 
     .insights-date {
-        font-size: 3em;
+        font-size: 2em;
     }
 
     .date-title {
-        padding-top: 35px;
-        font-size: 1.2em;
+        padding-top: 30px;
+        font-size: 1em;
     }
 
+    .date-title:first-of-type {
+        padding-top: 10px;
+    }
+}
+
+@media (min-width: 992px) {
+    .jumbotron-logo {
+        display: inline;
+    }
+
+    .date-title {
+        padding-top: 30px !important;
+    }
 }
 
 /*
  Content Styles
  */
-
-.banner-image {
-    width: 90%;
-    height: 100%;
-    margin-top: 20px;
-}
 
 #page-games, #page-magic {
     display: none;
