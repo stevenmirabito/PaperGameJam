@@ -238,6 +238,22 @@ a.btn {
     background-color: #faa41c;
 }
 
+.panel.panel-csh.panel-csh-inverse .panel-heading {
+    background-color: #22477d;
+}
+
+.panel.archive-item {
+    cursor: pointer;
+}
+
+.panel.archive-item .panel-body {
+    padding: 0;
+}
+
+.panel.archive-item .panel-body img {
+    width: 100%;
+}
+
 /*
  Footer Styles
  */

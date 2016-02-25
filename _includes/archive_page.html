@@ -1,0 +1,26 @@
+{% assign counter = 0 %}
+{% for node in nodes %}
+{% if counter == 3 %}
+</div>
+{% assign counter = 0 %}
+{% endif %}
+{% if counter == 0 %}
+<div class="row">
+    {% endif %}
+    <div class="col-md-4">
+        <a href="{{ node.page }}">
+            <div class="panel panel-csh panel-csh-inverse archive-item">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{ node.name }}</h3>
+                </div>
+                <div class="panel-body">
+                    <img src="{{ site.baseurl }}/images{{ page.url }}{{ node.image }}" alt="{{ node.name }}">
+                </div>
+            </div>
+        </a>
+    </div>
+    {% assign counter = counter | plus: 1 %}
+    {% if forloop.last %}
+</div>
+{% endif %}
+{% endfor %}
