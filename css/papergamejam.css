@@ -127,12 +127,62 @@ a.btn {
 }
 
 /*
+ Main Banner Styles
+ */
+
+.jumbotron-banner {
+    background-size: cover;
+    background: url('../images/banner_bg.png') no-repeat center;
+    width: 100%;
+    height: 200px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+.insights-date {
+    font-family: "Oxygen", sans-serif;
+    font-size: 2em;
+    text-align: center;
+    color: #FFF;
+    text-shadow: 0px 0px 25px rgba(0, 0, 0, 1);
+}
+
+.date-title {
+    font-size: 0.9em;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+@media (min-width: 768px) {
+
+    .information-update-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .jumbotron-banner {
+        height: 300px;
+    }
+
+    .insights-date {
+        font-size: 3em;
+    }
+
+    .date-title {
+        padding-top: 35px;
+        font-size: 1.2em;
+    }
+
+}
+
+/*
  Content Styles
  */
 
 .banner-image {
-    width: 30%;
-    margin-bottom: 30px;
+    width: 90%;
+    height: 100%;
+    margin-top: 20px;
 }
 
 #page-games, #page-magic {
