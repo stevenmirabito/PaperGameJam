@@ -1,26 +1,31 @@
-{% assign counter = 0 %}
-{% for node in nodes %}
-{% if counter == 3 %}
-</div>
-{% assign counter = 0 %}
-{% endif %}
-{% if counter == 0 %}
-<div class="row">
-    {% endif %}
-    <div class="col-md-4">
-        <a href="{{ node.page }}">
-            <div class="panel panel-csh panel-csh-inverse archive-item">
-                <div class="panel-heading">
-                    <h3 class="panel-title">{{ node.name }}</h3>
-                </div>
-                <div class="panel-body">
-                    <img src="{{ site.baseurl }}/images{{ page.url }}{{ node.image }}" alt="{{ node.name }}">
-                </div>
-            </div>
-        </a>
+{% if archive_year %}
+    {% assign submissions = site.pages | where: "layout", "submission" | where: "year", archive_year | sort: "title" %}
+    {% assign counter = 0 %}
+    {% for node in submissions %}
+    {% if counter == 3 %}
     </div>
-    {% assign counter = counter | plus: 1 %}
-    {% if forloop.last %}
-</div>
+    {% assign counter = 0 %}
+    {% endif %}
+    {% if counter == 0 %}
+    <div class="row">
+        {% endif %}
+        <div class="col-md-4">
+            <a href="{{ node.url }}">
+                <div class="panel panel-csh panel-csh-inverse archive-item">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{ node.title }}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <img src="{{ site.baseurl }}/images/archive/{{ node.year }}/{{ node.image }}" alt="{{ node.title }}">
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% assign counter = counter | plus: 1 %}
+        {% if forloop.last %}
+    </div>
+    {% endif %}
+    {% endfor %}
+{% else %}
+    No year specified.
 {% endif %}
-{% endfor %}
