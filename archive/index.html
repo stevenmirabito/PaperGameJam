@@ -7,3 +7,10 @@ has_children: true
 icon: calendar
 title: Submission Archive
 ---
+
+<ul>
+    {% assign sorted_pages = site.pages | where: "group", "navigation" | where: "parent", "Submission Archive" | sort: "title" %}
+    {% for node in sorted_pages %}
+        <li><a href="{{ node.url }}">{{ node.title }}</a></li>
+    {% endfor %}
+</ul>
