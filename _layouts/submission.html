@@ -1,0 +1,26 @@
+---
+layout: framework
+---
+
+<div class="row">
+    <div class="col-md-7">
+        {% if page.award %}
+        <div class="award">
+            <span class="glyphicon glyphicon-certificate"></span> {{ page.award }}
+        </div>
+        {% endif %}
+
+        {% if page.team %}
+        <h4>Team Members:</h4>
+        <ul>
+            {{ page.team }}
+        </ul>
+        {% endif %}
+
+        {{ content }}
+    </div>
+    <div class="col-md-5">
+        <img src="{{ site.baseurl }}/images/archive/{{ page.year }}/{{ page.image }}" alt="{{ page.title }}" class="submission-image">
+    </div>
+</div>
+<a href="{{ site.baseurl }}/archive/{{ page.year }}/" class="btn btn-info">&larr; Return to submission list</a>
